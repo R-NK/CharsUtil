@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CharsUtil));
             this.buttonFolder = new System.Windows.Forms.Button();
             this.textBoxFolder = new System.Windows.Forms.TextBox();
             this.outerPanel = new System.Windows.Forms.Panel();
@@ -65,9 +64,10 @@
             // buttonFolder
             // 
             this.buttonFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFolder.Location = new System.Drawing.Point(484, 4);
+            this.buttonFolder.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonFolder.Location = new System.Drawing.Point(484, 6);
             this.buttonFolder.Name = "buttonFolder";
-            this.buttonFolder.Size = new System.Drawing.Size(87, 22);
+            this.buttonFolder.Size = new System.Drawing.Size(87, 23);
             this.buttonFolder.TabIndex = 0;
             this.buttonFolder.Text = "フォルダ選択";
             this.buttonFolder.UseVisualStyleBackColor = true;
@@ -75,19 +75,20 @@
             // 
             // textBoxFolder
             // 
-            this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.textBoxFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFolder.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxFolder.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxFolder.Location = new System.Drawing.Point(15, 6);
             this.textBoxFolder.Name = "textBoxFolder";
             this.textBoxFolder.ReadOnly = true;
-            this.textBoxFolder.Size = new System.Drawing.Size(463, 19);
+            this.textBoxFolder.Size = new System.Drawing.Size(463, 23);
             this.textBoxFolder.TabIndex = 1;
             // 
             // outerPanel
             // 
-            this.outerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.outerPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outerPanel.Controls.Add(this.charlist);
             this.outerPanel.Controls.Add(this.buttonRead);
@@ -102,10 +103,11 @@
             // 
             // charlist
             // 
-            this.charlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.charlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.charlist.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.charlist.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.charlist.Location = new System.Drawing.Point(16, 246);
             this.charlist.Multiline = true;
             this.charlist.Name = "charlist";
@@ -118,9 +120,10 @@
             // 
             this.buttonRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRead.Enabled = false;
-            this.buttonRead.Location = new System.Drawing.Point(528, 193);
+            this.buttonRead.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonRead.Location = new System.Drawing.Point(528, 194);
             this.buttonRead.Name = "buttonRead";
-            this.buttonRead.Size = new System.Drawing.Size(87, 22);
+            this.buttonRead.Size = new System.Drawing.Size(87, 23);
             this.buttonRead.TabIndex = 5;
             this.buttonRead.Text = "読み込み";
             this.buttonRead.UseVisualStyleBackColor = true;
@@ -130,7 +133,7 @@
             // 
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.Enabled = false;
-            this.buttonSave.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonSave.Font = new System.Drawing.Font("Meiryo UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonSave.Location = new System.Drawing.Point(528, 391);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(87, 28);
@@ -143,6 +146,7 @@
             // 
             this.comboBoxEncode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEncode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEncode.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.comboBoxEncode.FormattingEnabled = true;
             this.comboBoxEncode.Items.AddRange(new object[] {
             "UTF-8",
@@ -151,14 +155,14 @@
             "Shift-JIS"});
             this.comboBoxEncode.Location = new System.Drawing.Point(337, 194);
             this.comboBoxEncode.Name = "comboBoxEncode";
-            this.comboBoxEncode.Size = new System.Drawing.Size(185, 20);
+            this.comboBoxEncode.Size = new System.Drawing.Size(185, 23);
             this.comboBoxEncode.TabIndex = 4;
             this.comboBoxEncode.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
@@ -184,6 +188,7 @@
             this.panel2.Controls.Add(this.buttonFile);
             this.panel2.Controls.Add(this.textBoxFile);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(585, 211);
@@ -192,9 +197,10 @@
             // buttonFile
             // 
             this.buttonFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonFile.Location = new System.Drawing.Point(484, 4);
+            this.buttonFile.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonFile.Location = new System.Drawing.Point(484, 6);
             this.buttonFile.Name = "buttonFile";
-            this.buttonFile.Size = new System.Drawing.Size(87, 22);
+            this.buttonFile.Size = new System.Drawing.Size(87, 23);
             this.buttonFile.TabIndex = 1;
             this.buttonFile.Text = "ファイル選択";
             this.buttonFile.UseVisualStyleBackColor = true;
@@ -202,14 +208,14 @@
             // 
             // textBoxFile
             // 
-            this.textBoxFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.textBoxFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxFile.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxFile.Location = new System.Drawing.Point(15, 6);
             this.textBoxFile.MaxLength = 0;
             this.textBoxFile.Name = "textBoxFile";
             this.textBoxFile.ReadOnly = true;
-            this.textBoxFile.Size = new System.Drawing.Size(463, 19);
+            this.textBoxFile.Size = new System.Drawing.Size(463, 23);
             this.textBoxFile.TabIndex = 0;
             // 
             // tabPage2
@@ -240,8 +246,9 @@
             // 
             // textBoxFiles
             // 
-            this.textBoxFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.textBoxFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxFiles.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxFiles.Location = new System.Drawing.Point(15, 56);
             this.textBoxFiles.Multiline = true;
             this.textBoxFiles.Name = "textBoxFiles";
@@ -252,11 +259,12 @@
             // 
             // textBoxExt
             // 
-            this.textBoxExt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.textBoxExt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxExt.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxExt.Location = new System.Drawing.Point(15, 31);
             this.textBoxExt.Name = "textBoxExt";
-            this.textBoxExt.Size = new System.Drawing.Size(463, 19);
+            this.textBoxExt.Size = new System.Drawing.Size(463, 23);
             this.textBoxExt.TabIndex = 11;
             this.textBoxExt.Text = "txt,";
             this.textBoxExt.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
@@ -265,10 +273,10 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(481, 33);
+            this.label2.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(484, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(43, 15);
             this.label2.TabIndex = 10;
             this.label2.Text = "拡張子";
             // 
@@ -287,7 +295,6 @@
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(36, 22);
@@ -297,7 +304,6 @@
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(36, 22);

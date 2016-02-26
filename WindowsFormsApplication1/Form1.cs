@@ -194,8 +194,7 @@ namespace CharsUtil
                     }
                     else if (toolStripButton2.Checked == true)
                     {
-                        string str = strlast;
-                        txt.Write(str);
+                        txt.Write(strlast);
                     }
                 }
             }
@@ -330,7 +329,17 @@ namespace CharsUtil
                         path, // 検索開始ディレクトリ
                         "*." + ext, // 検索パターン
                         SearchOption.AllDirectories);
-                        foreach (string file in files)
+                        //foreach (string file in files)
+                        //{
+                        //    strlist.Add(ReadAll(file, encode));
+                        //    Invoke(new Action(() =>
+                        //    {
+                        //        //textBoxFIlesにマッチしたファイルを表示
+                        //        textBoxFiles.AppendText(file + "\r\n");
+                        //    }));
+                        //}
+
+                        Parallel.ForEach(files, file =>
                         {
                             strlist.Add(ReadAll(file, encode));
                             Invoke(new Action(() =>
@@ -338,7 +347,7 @@ namespace CharsUtil
                                 //textBoxFIlesにマッチしたファイルを表示
                                 textBoxFiles.AppendText(file + "\r\n");
                             }));
-                        }
+                        });
 
                         filecount += files.Count();
                         stopwatch.Stop();
@@ -347,19 +356,21 @@ namespace CharsUtil
                 textBoxFiles.AppendText("ファイル数: " + filecount + "\r\n" + stopwatch.Elapsed.TotalMilliseconds + "ms" + "\r\n");
 
                 List<char> charsum = new List<char>();
+                stopwatch.Start();
                 await Task.Run(() =>
-                {
+                {                    
                     charsum = multicharsReadind(p, strlist);
                     strlast = chardistnctLinq(charsum);
                 });
-
+                stopwatch.Stop();
                 label1.Text = "完了";
                 //エンコード表示
-                string encodetextbox = "Encode: " + comboBoxEncode.Text + "\r\n";
+                string encodetextbox = "Encode: " + comboBoxEncode.Text + "　";
                 string counttextbox = "Count: " + strlast.Count() + "\r\n";
+                string stoptextbox = stopwatch.Elapsed.TotalMilliseconds + "ms" + "\r\n";
 
                 StringBuilder uniqsb = new StringBuilder();
-                uniqsb.Append(encodetextbox + counttextbox + strlast);
+                uniqsb.Append(encodetextbox + counttextbox + stoptextbox + strlast);
                 charlist.Text = uniqsb.ToString();
 
                 toolStripProgressBar1.Value = 100;
@@ -386,9 +397,12 @@ namespace CharsUtil
         {
             List<char> charsum = new List<char>();
             List<char> chrs = new List<char>();
+            List<char> dis = new List<char>();
             char chr;
             int mcount = strlist.Count;
             int count = 1;
+            double num = 1.1;
+            string much;
 
             foreach (string sb in strlist)
             {
@@ -398,14 +412,15 @@ namespace CharsUtil
 
                     foreach (char charind in sb)
                     {
-                        if (charind.ToString() != "\r\n " && charind.ToString() != "\n\r" && charind.ToString() != "\r" && charind.ToString() != "\n" && charind.ToString() != "  ")
+                        much = charind.ToString();
+                        if (much != "\r\n " && much != "\n\r" && much != "\r" && much != "\n" && much != "  ")
                         {
                             chr = charind;
                             chrs.Add(chr);
                         }
                     }
-
-                    charsum.AddRange(chrs);
+                    dis = chrs.AsParallel().Distinct().ToList();
+                    charsum.AddRange(dis);
 
                 }
                 finally
@@ -414,8 +429,7 @@ namespace CharsUtil
                     {
 
                     }
-                }
-                double num = 1.1;
+                }              
                 int percentage = 100 * count / (int)(mcount * num); // 進捗率
                 progress.Report(percentage);
                 count++;
@@ -424,32 +438,6 @@ namespace CharsUtil
             return charsum;
         }
 
-        //ソートして重複文字を削除 6480
-        private string chardistnct(List<char> chrs)
-        {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-
-            chrs.Sort();
-            char[] dis = chrs.Distinct().ToArray();
-            List<char> replaced = new List<char>();
-            foreach (char replace in dis)
-            {
-                if (!Regex.IsMatch(replace.ToString(), "[\r\n]|\t|[\u0000-\u0019]"))
-                {
-                    replaced.Add(replace);
-                }
-            }
-            string str = new String(replaced.ToArray());
-            stopwatch.Stop();
-            MessageBox.Show(stopwatch.Elapsed.TotalMilliseconds + "ms");
-            return str;
-        }
-        /// <summary>
-        /// Linq版 6609
-        /// </summary>
-        /// <param name="chrs"></param>
-        /// <returns></returns>
         private string chardistnctLinq(List<char> chrs)
         {
             List<char> dis = chrs.AsParallel()
